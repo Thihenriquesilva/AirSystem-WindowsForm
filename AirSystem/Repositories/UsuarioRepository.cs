@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AirSystem.Repositories
 {
-      class UsuarioRepository
+      public class UsuarioRepository
     {
         private static List<Usuario> usuarios;
 

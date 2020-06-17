@@ -15,6 +15,7 @@ namespace AirSystem.View
 {
     public partial class frmListarUsuario : Form
     {
+        UsuarioRepository repository = new UsuarioRepository();
         public frmListarUsuario()
         {
             InitializeComponent();
@@ -24,7 +25,6 @@ namespace AirSystem.View
         
         private void frmListarUsuario_Load(object sender, EventArgs e)
         {
-            UsuarioRepository repository = new UsuarioRepository();
 
             dgvListaAluno.DataSource = repository.BuscarTodos();
 
@@ -67,7 +67,6 @@ namespace AirSystem.View
             new frmCadastro().ShowDialog();
 
             dgvListaAluno.DataSource = null;
-            UsuarioRepository repository = new UsuarioRepository();
             dgvListaAluno.DataSource = repository.BuscarTodos();
         }
 
@@ -105,19 +104,22 @@ namespace AirSystem.View
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            
+            new frmCadastro().ShowDialog();
             
         }
 
         private void textBuscaNome_TextChanged(object sender, EventArgs e)
         { 
-            UsuarioRepository repository = new UsuarioRepository();
+            
             dgvListaAluno.DataSource = null;
 
             dgvListaAluno.DataSource = repository.BuscarTodos().FindAll(x =>
             x.nome.ToUpper().Contains(textBuscaNome.Text.ToUpper()));
         }
 
-        
+        private void btnDeletar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

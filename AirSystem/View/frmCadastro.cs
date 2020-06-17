@@ -23,11 +23,11 @@ namespace AirSystem.View
             this.StartPosition = FormStartPosition.CenterParent;
         }
 
-        //public frmCadastro(Usuario usuario)
-        //{
-        //    InitializeComponent();
-        //    this.usuario = usuario;
-        //}
+        public frmCadastro(Usuario usuario)
+        {
+            InitializeComponent();
+            this.usuario = usuario;
+        }
 
         private void frmCadastro_Load(object sender, EventArgs e)
         {
@@ -40,22 +40,19 @@ namespace AirSystem.View
                 MessageBox.Show("Inglês");
             }
 
-            //textNome.Text = usuario.nome;
-            //textSobrenome.Text = usuario.sobrenome;
-            //textEndereco.Text = usuario.endereco;
-            //textNum.Text = usuario.numeroEnd;
-            //dateTimePicker1.Value = usuario.nascimento;
-            //textUsuarioC.Text = usuario.usuario;
-            //textSenhaC.Text = usuario.senha;
-            ////textConfirmaSenha.Text = usuario.confirmasenha;
-            //if (checkBoxAdmin.Checked == true)
-            //{
-            //    usuario.tipousuario = "Adm";
-            //}
-            //else
-            //{
-            //    usuario.tipousuario = "Comum";
-            //}
+            if(usuario != null)
+            {
+                textNome.Text = usuario.nome;
+                textSobrenome.Text = usuario.sobrenome;
+                textEndereco.Text = usuario.endereco;
+                textNum.Text = usuario.numeroEnd;
+                dateTimePicker1.Value = usuario.nascimento;
+                textUsuarioC.Text = usuario.usuario;
+                textSenhaC.Text = usuario.senha;
+
+            }
+            
+           
 
         }
 
@@ -269,6 +266,18 @@ namespace AirSystem.View
                     repository.Adicionar(usuario);
 
                     MessageBox.Show("Cadastro realizado com sucesso.","Parabéns");
+                }
+                else
+                {
+                    this.usuario.nome = textNome.Text;
+                    this.usuario.sobrenome = textSobrenome.Text;
+                    this.usuario.endereco = textEndereco.Text;
+                    this.usuario.numeroEnd = textNum.Text;
+                    this.usuario.usuario = textUsuarioC.Text;
+                    this.usuario.senha = textSenhaC.Text;
+                    this.usuario.senha = textSenhaC.Text;
+
+                    repository.Editar(usuario);
                 }
                 this.Close();
             }

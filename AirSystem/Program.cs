@@ -17,8 +17,8 @@ namespace AirSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmLogin());
-            Application.Run(new frmTelaAdmin());
+            Application.Run(new frmLogin());
+            //Application.Run(new frmTelaAdmin());
         }
     }
 }

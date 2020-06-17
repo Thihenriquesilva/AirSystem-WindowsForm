@@ -51,9 +51,10 @@ namespace AirSystem
             else
             {
                 MessageBox.Show("Bem vindo");
+                
             }
 
-
+            new frmTelaAdmin().ShowDialog();
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)
@@ -68,6 +69,8 @@ namespace AirSystem
                 textUsuario.Text = "";
                 textUsuario.ForeColor = Color.Black;
             }
+
+            new frmLogin().ShowDialog();
         }
 
         private void textUsuario_Leave(object sender, EventArgs e)
@@ -98,6 +101,11 @@ namespace AirSystem
                 textSenha.ForeColor = Color.Silver;
                 textSenha.UseSystemPasswordChar = false;
             }
+        }
+
+        private void btnComun_Click(object sender, EventArgs e)
+        {
+            new frmTelaComun().ShowDialog();
         }
     }
 }

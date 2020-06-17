@@ -72,7 +72,7 @@
             // 
             this.textBuscaNome.BackColor = System.Drawing.Color.White;
             this.textBuscaNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBuscaNome.ForeColor = System.Drawing.Color.Silver;
+            this.textBuscaNome.ForeColor = System.Drawing.Color.Black;
             this.textBuscaNome.Location = new System.Drawing.Point(69, 448);
             this.textBuscaNome.Name = "textBuscaNome";
             this.textBuscaNome.Size = new System.Drawing.Size(171, 23);
@@ -132,6 +132,7 @@
             this.btnDeletar.TabIndex = 7;
             this.btnDeletar.Text = "Deletar";
             this.btnDeletar.UseVisualStyleBackColor = false;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // pictureUsuario1
             // 
@@ -168,7 +169,7 @@
             // 
             this.textBoxNome1.BackColor = System.Drawing.Color.White;
             this.textBoxNome1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNome1.ForeColor = System.Drawing.Color.Silver;
+            this.textBoxNome1.ForeColor = System.Drawing.Color.Black;
             this.textBoxNome1.Location = new System.Drawing.Point(513, 173);
             this.textBoxNome1.Name = "textBoxNome1";
             this.textBoxNome1.Size = new System.Drawing.Size(171, 23);
@@ -189,7 +190,7 @@
             // 
             this.textBoxSobrenome1.BackColor = System.Drawing.Color.White;
             this.textBoxSobrenome1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSobrenome1.ForeColor = System.Drawing.Color.Silver;
+            this.textBoxSobrenome1.ForeColor = System.Drawing.Color.Black;
             this.textBoxSobrenome1.Location = new System.Drawing.Point(513, 224);
             this.textBoxSobrenome1.Name = "textBoxSobrenome1";
             this.textBoxSobrenome1.Size = new System.Drawing.Size(171, 23);
@@ -210,7 +211,7 @@
             // 
             this.textBoxEndereco1.BackColor = System.Drawing.Color.White;
             this.textBoxEndereco1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxEndereco1.ForeColor = System.Drawing.Color.Silver;
+            this.textBoxEndereco1.ForeColor = System.Drawing.Color.Black;
             this.textBoxEndereco1.Location = new System.Drawing.Point(513, 273);
             this.textBoxEndereco1.Name = "textBoxEndereco1";
             this.textBoxEndereco1.Size = new System.Drawing.Size(171, 23);
@@ -241,7 +242,7 @@
             // 
             this.textBoxUsuario1.BackColor = System.Drawing.Color.White;
             this.textBoxUsuario1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsuario1.ForeColor = System.Drawing.Color.Silver;
+            this.textBoxUsuario1.ForeColor = System.Drawing.Color.Black;
             this.textBoxUsuario1.Location = new System.Drawing.Point(513, 362);
             this.textBoxUsuario1.Name = "textBoxUsuario1";
             this.textBoxUsuario1.Size = new System.Drawing.Size(171, 23);
@@ -303,7 +304,7 @@
             // 
             this.textBoxSenha1.BackColor = System.Drawing.Color.White;
             this.textBoxSenha1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSenha1.ForeColor = System.Drawing.Color.Silver;
+            this.textBoxSenha1.ForeColor = System.Drawing.Color.Black;
             this.textBoxSenha1.Location = new System.Drawing.Point(513, 398);
             this.textBoxSenha1.Name = "textBoxSenha1";
             this.textBoxSenha1.Size = new System.Drawing.Size(171, 23);
@@ -314,7 +315,7 @@
             // 
             this.textBoxConfirmaSenha1.BackColor = System.Drawing.Color.White;
             this.textBoxConfirmaSenha1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxConfirmaSenha1.ForeColor = System.Drawing.Color.Silver;
+            this.textBoxConfirmaSenha1.ForeColor = System.Drawing.Color.Black;
             this.textBoxConfirmaSenha1.Location = new System.Drawing.Point(513, 429);
             this.textBoxConfirmaSenha1.Name = "textBoxConfirmaSenha1";
             this.textBoxConfirmaSenha1.Size = new System.Drawing.Size(171, 23);

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AirSystem.Models
 {
-    class Usuario
+    public class Usuario
     {
         public int codigo { get; set; }
         public string nome { get; set; }

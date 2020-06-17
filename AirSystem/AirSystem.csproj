@@ -74,6 +74,12 @@
     <Compile Include="View\frmTelaAdmin.Designer.cs">
       <DependentUpon>frmTelaAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\frmTelaComun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTelaComun.Designer.cs">
+      <DependentUpon>frmTelaComun.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="View\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\frmTelaAdmin.resx">
       <DependentUpon>frmTelaAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTelaComun.resx">
+      <DependentUpon>frmTelaComun.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
