@@ -25,3 +25,17 @@ C:\Users\thi_s\OneDrive\Documentos\Desenvolvimento de Sistemas\.Net\AirSystem-Wi
 C:\Users\thi_s\OneDrive\Documentos\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.csproj.CoreCompileInputs.cache
 C:\Users\thi_s\OneDrive\Documentos\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.exe
 C:\Users\thi_s\OneDrive\Documentos\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.pdb
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\bin\Debug\AirSystem.exe.config
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\bin\Debug\AirSystem.exe
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\bin\Debug\AirSystem.pdb
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.csprojAssemblyReference.cache
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.frmLogin.resources
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.Properties.Resources.resources
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.View.frmCadastro.resources
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.View.frmListarUsuario.resources
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.View.frmTelaAdmin.resources
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.View.frmTelaComun.resources
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.csproj.GenerateResource.cache
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.csproj.CoreCompileInputs.cache
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.exe
+C:\Users\thi_s\Desktop\Desenvolvimento de Sistemas\.Net\AirSystem-WindowsForm\AirSystem\obj\Debug\AirSystem.pdb

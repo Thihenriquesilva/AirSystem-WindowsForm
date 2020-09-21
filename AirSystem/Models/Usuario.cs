@@ -19,7 +19,7 @@ namespace AirSystem.Models
         public string senha { get; set; }
         //public string confirmasenha { get; set; }
 
-        public string tipousuario { get; set; }
+        public bool tipousuario { get; set; }
 
     }
 }

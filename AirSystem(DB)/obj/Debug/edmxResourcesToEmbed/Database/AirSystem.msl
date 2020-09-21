@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AirSystemModelStoreContainer" CdmEntityContainer="AirSystemEntities">
+    <EntitySetMapping Name="Acesso">
+      <EntityTypeMapping TypeName="AirSystemModel.Acesso">
+        <MappingFragment StoreEntitySet="Acesso">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_Usuario" ColumnName="id_Usuario" />
+          <ScalarProperty Name="Dt_AcessoEntrada" ColumnName="Dt_AcessoEntrada" />
+          <ScalarProperty Name="Dt_AcessoSaida" ColumnName="Dt_AcessoSaida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="AirSystemModel.Usuarios">
+        <MappingFragment StoreEntitySet="Usuarios">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Tx_Nome" ColumnName="Tx_Nome" />
+          <ScalarProperty Name="Tx_Sobrenome" ColumnName="Tx_Sobrenome" />
+          <ScalarProperty Name="Tx_Logradouro" ColumnName="Tx_Logradouro" />
+          <ScalarProperty Name="Nr_Casa" ColumnName="Nr_Casa" />
+          <ScalarProperty Name="Dt_Nascimento" ColumnName="Dt_Nascimento" />
+          <ScalarProperty Name="Tx_Usuario" ColumnName="Tx_Usuario" />
+          <ScalarProperty Name="Tx_Senha" ColumnName="Tx_Senha" />
+          <ScalarProperty Name="Tx_CaminhoFoto" ColumnName="Tx_CaminhoFoto" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

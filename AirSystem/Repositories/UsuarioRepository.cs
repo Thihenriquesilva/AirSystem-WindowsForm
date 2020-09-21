@@ -16,7 +16,7 @@ namespace AirSystem.Repositories
         {
             if (usuarios == null)
             {
-                usuarios = new List<Usuario> { 
+                usuarios = new List<Usuario> {
                     new Usuario
                     {
                         codigo = 0,
@@ -24,16 +24,31 @@ namespace AirSystem.Repositories
                         sobrenome = "Henrique",
                         endereco = "Rua das Margaridas",
                         numeroEnd = "207",
+                        nascimento = DateTime.Now,
                         usuario = "MajorHenri",
                         senha = "Thiago123",
-                        tipousuario = "false"
+                        tipousuario = true
+                    },
+                    new Usuario
+                    {
+                        codigo = 1,
+                        nome = "Teste",
+                        sobrenome = "1,2,3",
+                        endereco = "Av testatora",
+                        numeroEnd = "123",
+                        nascimento = DateTime.Now,
+                        usuario = "Teste123",
+                        senha = "Testando123",
+                        tipousuario = false
+
                     }
                 };
+                
             }
         }
         public List<Usuario> BuscarTodos()
         {
-            return usuarios;
+            return usuarios.ToList();
         }
 
         public void Adicionar(Usuario usuario)
@@ -45,7 +60,7 @@ namespace AirSystem.Repositories
 
         public void Editar(Usuario usuario)
         {
-            Usuario u = usuarios.Find(x => x.codigo == usuario.codigo);
+            Usuario u = usuarios.FirstOrDefault(x => x.codigo == usuario.codigo);
             usuarios[usuarios.IndexOf(u)] = usuario;
 
             u.nome = usuario.nome;
@@ -53,7 +68,8 @@ namespace AirSystem.Repositories
             u.endereco = usuario.endereco;
             u.numeroEnd = usuario.numeroEnd;
             u.usuario = usuario.usuario;
-            u.senha = u.senha;
+            u.senha = usuario.senha;
+            u.tipousuario = usuario.tipousuario;
 
         }
 
@@ -61,6 +77,23 @@ namespace AirSystem.Repositories
         {
             Usuario usuario = usuarios.Find(x => x.codigo == codigo);
             usuarios.Remove(usuario);
+        }
+
+        public Usuario BuscarPorLogin(string user, string password)
+        {
+            Usuario us = usuarios.FirstOrDefault(x => x.usuario == user && x.senha == password );
+
+            return us;
+        }
+
+        public bool UsuarioExiste(string usuario)
+        {
+            if (usuarios.FirstOrDefault(x=>x.usuario ==usuario) == null)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

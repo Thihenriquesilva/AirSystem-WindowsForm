@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AirSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Acesso">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="id_Usuario" Type="Int32" />
+    <Property Name="Dt_AcessoEntrada" Type="DateTime" Precision="3" />
+    <Property Name="Dt_AcessoSaida" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Usuarios" Relationship="Self.FK_Acesso_Usuarios" FromRole="Acesso" ToRole="Usuarios" />
+  </EntityType>
+  <EntityType Name="Usuarios">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Tx_Nome" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tx_Sobrenome" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tx_Logradouro" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Nr_Casa" Type="Int32" />
+    <Property Name="Dt_Nascimento" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Tx_Usuario" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tx_Senha" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Tx_CaminhoFoto" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="IsAdmin" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Acesso" Relationship="Self.FK_Acesso_Usuarios" FromRole="Usuarios" ToRole="Acesso" />
+  </EntityType>
+  <Association Name="FK_Acesso_Usuarios">
+    <End Role="Usuarios" Type="Self.Usuarios" Multiplicity="0..1" />
+    <End Role="Acesso" Type="Self.Acesso" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuarios">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Acesso">
+        <PropertyRef Name="id_Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AirSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Acesso" EntityType="Self.Acesso" />
+    <EntitySet Name="Usuarios" EntityType="Self.Usuarios" />
+    <AssociationSet Name="FK_Acesso_Usuarios" Association="Self.FK_Acesso_Usuarios">
+      <End Role="Usuarios" EntitySet="Usuarios" />
+      <End Role="Acesso" EntitySet="Acesso" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -16,17 +16,21 @@ namespace AirSystem.View
     public partial class frmListarUsuario : Form
     {
         UsuarioRepository repository = new UsuarioRepository();
+        Usuario usuario = new Usuario();
         public frmListarUsuario()
         {
             InitializeComponent();
+            
         }
         
      
         
         private void frmListarUsuario_Load(object sender, EventArgs e)
         {
-
-            dgvListaAluno.DataSource = repository.BuscarTodos();
+            btnEditar.Enabled = false;
+            btnDeletar.Enabled = false;
+            List<Usuario> usuarios = repository.BuscarTodos();
+            CarregarTodos();
 
         }
 
@@ -66,8 +70,7 @@ namespace AirSystem.View
         {
             new frmCadastro().ShowDialog();
 
-            dgvListaAluno.DataSource = null;
-            dgvListaAluno.DataSource = repository.BuscarTodos();
+            CarregarTodos();
         }
 
         private void dgvListaAluno_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -76,25 +79,22 @@ namespace AirSystem.View
             {
                 DataGridViewRow rows = dgvListaAluno.Rows[e.RowIndex];
 
-                string nome = textBoxNome1.Text = rows.Cells[1].Value.ToString();
-                string sobreNome = textBoxSobrenome1.Text = rows.Cells[2].Value.ToString();
-                string endereco =textBoxEndereco1.Text = rows.Cells[3].Value.ToString();
-                string enderecoNum = textBoxEnderecoNum1.Text = rows.Cells[4].Value.ToString();
-                string userName =textBoxUsuario1.Text = rows.Cells[6].Value.ToString();
-                string senha = textBoxSenha1.Text = rows.Cells[7].Value.ToString();
-                string confirmasenha = textBoxConfirmaSenha1.Text = rows.Cells[7].Value.ToString();
-                int codigo = Convert.ToInt32(rows.Cells[0].Value.ToString());
+                usuario.nome = textBoxNome1.Text = rows.Cells[1].Value.ToString();
+                usuario.sobrenome =textBoxSobrenome1.Text = rows.Cells[2].Value.ToString();
+                usuario.endereco=textBoxEndereco1.Text = rows.Cells[3].Value.ToString();
+                usuario.numeroEnd=textBoxEnderecoNum1.Text = rows.Cells[4].Value.ToString();
+                usuario.nascimento = dateTimePicker1.Value = Convert.ToDateTime(rows.Cells[5].Value.ToString());
+                usuario.usuario=textBoxUsuario1.Text = rows.Cells[6].Value.ToString();
+                usuario.senha=textBoxSenha1.Text = rows.Cells[7].Value.ToString();
+                textBoxConfirmaSenha1.Text = rows.Cells[7].Value.ToString();
+                usuario.codigo=Convert.ToInt32(rows.Cells[0].Value.ToString());
 
-                Usuario usuario = new Usuario
-                {
-                    codigo = codigo,
-                    nome = nome,
-                    sobrenome = sobreNome,
-                    endereco = endereco,
-                    numeroEnd = enderecoNum,
-                    usuario = userName,
-                    senha = senha
-                };
+               
+
+                btnEditar.Enabled = true;
+                btnDeletar.Enabled = true;
+
+                CarregarTodos();
             }
             catch (Exception ex)
             {
@@ -104,8 +104,9 @@ namespace AirSystem.View
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            new frmCadastro().ShowDialog();
-            
+            new frmCadastro(usuario).ShowDialog();
+            CarregarTodos();
+
         }
 
         private void textBuscaNome_TextChanged(object sender, EventArgs e)
@@ -119,7 +120,21 @@ namespace AirSystem.View
 
         private void btnDeletar_Click(object sender, EventArgs e)
         {
-            
+            DialogResult dr = MessageBox.Show("Deseja realmente excluir", "Atenção",
+                MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+
+            if(dr == DialogResult.Yes)
+            {
+                repository.Deletar(usuario.codigo);
+                CarregarTodos();
+            }
+        }
+
+
+        private void CarregarTodos()
+        {
+            dgvListaAluno.DataSource = null;
+            dgvListaAluno.DataSource = repository.BuscarTodos();
         }
     }
 }

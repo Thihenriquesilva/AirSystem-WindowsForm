@@ -42,7 +42,6 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnComun = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -183,25 +182,12 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnComun
-            // 
-            this.btnComun.BackColor = System.Drawing.Color.White;
-            this.btnComun.Font = new System.Drawing.Font("Malgun Gothic Semilight", 6.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnComun.Location = new System.Drawing.Point(450, 415);
-            this.btnComun.Name = "btnComun";
-            this.btnComun.Size = new System.Drawing.Size(75, 23);
-            this.btnComun.TabIndex = 12;
-            this.btnComun.Text = "Entrar Comun";
-            this.btnComun.UseVisualStyleBackColor = false;
-            this.btnComun.Click += new System.EventHandler(this.btnComun_Click);
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Honeydew;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnComun);
             this.Controls.Add(this.lblDate);
             this.Controls.Add(this.btnCadastro);
             this.Controls.Add(this.btnSair);
@@ -243,7 +229,6 @@
         private System.Windows.Forms.Button btnCadastro;
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button btnComun;
     }
 }
 

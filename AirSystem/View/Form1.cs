@@ -1,4 +1,6 @@
-﻿using AirSystem.View;
+﻿using AirSystem.Models;
+using AirSystem.Repositories;
+using AirSystem.View;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +16,7 @@ namespace AirSystem
 {
     public partial class frmLogin : Form
     {
+        UsuarioRepository repository = new UsuarioRepository();
         public frmLogin()
         {
             InitializeComponent();
@@ -22,6 +25,7 @@ namespace AirSystem
         private void frmLogin_Load(object sender, EventArgs e)
         {
             lblDate.Text = DateTime.Now.ToShortTimeString();
+            repository.BuscarTodos();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -42,19 +46,50 @@ namespace AirSystem
         private void btnLogin_Click(object sender, EventArgs e)
         {
             idioma = languageBox.SelectedIndex;
-            if (textUsuario.Text.Trim().Length == 0 ||
-                textSenha.Text.Trim().Length == 0)
+            if ((textUsuario.Text == "Digite seu usuário...") ||
+               (textSenha.Text == "Digite sua senha..."))
             {
                 SystemSounds.Beep.Play();
                 MessageBox.Show("Usuario ou senha invalidos", "Erro");
-            }
-            else
-            {
-                MessageBox.Show("Bem vindo");
-                
+                return;
             }
 
-            new frmTelaAdmin().ShowDialog();
+            try
+            {
+
+                string usuario = textUsuario.Text;
+                string password = textSenha.Text;
+                Usuario usuarioLogado = repository.BuscarPorLogin(usuario, password);
+                //usuarioLogado.Tx_Usuario= textUsuario.Text;
+                //usuarioLogado.Tx_Senha = textSenha.Text;
+                if (usuarioLogado != null)
+                {
+
+                    if (usuarioLogado.tipousuario == true)
+                    {
+                        this.Hide();
+                        new frmTelaAdmin().ShowDialog();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Bem vindo");
+                        this.Hide();
+                        new frmTelaComun().ShowDialog();
+                        this.Close();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Usuário ou senha invalidos", "Atenção");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         private void btnCadastro_Click(object sender, EventArgs e)
@@ -69,8 +104,6 @@ namespace AirSystem
                 textUsuario.Text = "";
                 textUsuario.ForeColor = Color.Black;
             }
-
-            new frmLogin().ShowDialog();
         }
 
         private void textUsuario_Leave(object sender, EventArgs e)
@@ -103,9 +136,6 @@ namespace AirSystem
             }
         }
 
-        private void btnComun_Click(object sender, EventArgs e)
-        {
-            new frmTelaComun().ShowDialog();
-        }
+        
     }
 }

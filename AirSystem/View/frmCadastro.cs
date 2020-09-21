@@ -31,14 +31,6 @@ namespace AirSystem.View
 
         private void frmCadastro_Load(object sender, EventArgs e)
         {
-            if (frmLogin.idioma == 0)
-            {
-                MessageBox.Show("Portugues");
-            }
-            else
-            {
-                MessageBox.Show("Inglês");
-            }
 
             if(usuario != null)
             {
@@ -49,13 +41,23 @@ namespace AirSystem.View
                 dateTimePicker1.Value = usuario.nascimento;
                 textUsuarioC.Text = usuario.usuario;
                 textSenhaC.Text = usuario.senha;
+                checkBoxAdmin.Checked = usuario.tipousuario;
 
+                btnCadastro.Text = "Salvar";
             }
-            
-           
+
+            if (frmLogin.idioma == 0)
+            {
+                MessageBox.Show("Portugues");
+            }
+            else
+            {
+                MessageBox.Show("Inglês");
+            }
+
 
         }
-
+        // ********************* Literalmente repetidos **********************
         private void textNome_Enter(object sender, EventArgs e)
         {   
             if (textNome.Text == "Digite seu nome...")
@@ -213,6 +215,8 @@ namespace AirSystem.View
 
         }
 
+        // *************** FIM ********************
+
         private void btnAlterar_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofd = new OpenFileDialog();
@@ -257,27 +261,42 @@ namespace AirSystem.View
                         sobrenome = textSobrenome.Text,
                         endereco = textEndereco.Text,
                         numeroEnd = textNum.Text,
+                        nascimento = dateTimePicker1.Value,
                         usuario = textUsuarioC.Text,
                         senha = textSenhaC.Text,
                         //TODO: talvez precise de correção
-                        tipousuario = checkBoxAdmin.Checked.ToString()
+                        tipousuario = Convert.ToBoolean(checkBoxAdmin.Checked)
 
                     };
-                    repository.Adicionar(usuario);
+                    if(repository.UsuarioExiste(textUsuarioC.Text))
+                    {
+                        repository.Adicionar(usuario);
 
-                    MessageBox.Show("Cadastro realizado com sucesso.","Parabéns");
+                        MessageBox.Show("Cadastro realizado com sucesso.", "Parabéns");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuário já existente");
+                        textUsuarioC.Text = "";
+                        
+                    }
                 }
                 else
                 {
-                    this.usuario.nome = textNome.Text;
-                    this.usuario.sobrenome = textSobrenome.Text;
-                    this.usuario.endereco = textEndereco.Text;
-                    this.usuario.numeroEnd = textNum.Text;
-                    this.usuario.usuario = textUsuarioC.Text;
-                    this.usuario.senha = textSenhaC.Text;
-                    this.usuario.senha = textSenhaC.Text;
+                    
+
+                    usuario.nome = textNome.Text;
+                    usuario.sobrenome = textSobrenome.Text;
+                    usuario.endereco = textEndereco.Text;
+                    usuario.numeroEnd = textNum.Text;
+                    usuario.nascimento = dateTimePicker1.Value;
+                    usuario.usuario = textUsuarioC.Text;
+                    usuario.senha = textSenhaC.Text;
+                    usuario.senha = textConfirmaSenha.Text;
+                    usuario.tipousuario = Convert.ToBoolean(checkBoxAdmin.Checked);
 
                     repository.Editar(usuario);
+                    
                 }
                 this.Close();
             }
